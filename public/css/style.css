@@ -645,6 +645,30 @@ body {
     -o-transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .client__username {
+    padding: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    opacity: .6;
+    -webkit-transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .client__username:hover {
+      opacity: 1; }
+    .client__username__copy {
+      margin-left: 1rem; }
   .client__password {
     padding: 1rem;
     display: -webkit-box;

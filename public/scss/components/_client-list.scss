@@ -49,6 +49,27 @@
 		transition: transform .25s $cubic;
 	}
 
+	&__username {
+		padding: 1rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		white-space: nowrap;
+		overflow: hidden;
+		-o-text-overflow: ellipsis;
+		text-overflow: ellipsis;
+		opacity: .6;
+		transition: opacity .25s $cubic;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&__copy {
+			margin-left: 1rem;
+		}
+	}
+
 	&__password {
 		padding: 1rem;
 		display: flex;

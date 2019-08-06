@@ -26,6 +26,13 @@ const fillList = clients => {
           				${client.name}
           			</div>
 
+                <div class="client__username">
+          				${client.username ? client.username : '-'}
+          				<div class="client__username__copy list-btn copy ${client.username ? 'active' : 'disabled'}" data-clipboard-text="${client.username}">
+          					<i class="material-icons">filter_none</i>
+          				</div>
+          			</div>
+
           			<div class="client__password">
           				${client.password ? client.password : '-'}
           				<div class="client__password__copy list-btn copy ${client.password ? 'active' : 'disabled'}" data-clipboard-text="${client.password}">
