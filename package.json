@@ -1,0 +1,27 @@
+{
+  "name": "pw-manager",
+  "version": "1.0.0",
+  "description": "password manager for personal usage",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cremetv/pw-manager.git"
+  },
+  "author": "creme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cremetv/pw-manager/issues"
+  },
+  "homepage": "https://github.com/cremetv/pw-manager#readme",
+  "devDependencies": {
+    "electron": "^6.0.0"
+  },
+  "dependencies": {
+    "clipboard": "^2.0.4",
+    "gsap": "^2.1.3"
+  }
+}
