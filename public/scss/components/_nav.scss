@@ -1,5 +1,5 @@
 .main-nav {
-	background: $bg;
+	background: darken($bg, 5%);
 	padding: 1rem;
 	display: flex;
 	flex-direction: row;
@@ -7,6 +7,16 @@
 
 	.search {
 		flex: 1;
+		// margin-left: 1rem;
+	}
+
+	.mittwald {
 		margin-left: 1rem;
+
+		a {
+			color: #ffaf50;
+			font-weight: $fw-bold;
+			text-decoration: none;
+		}
 	}
 }

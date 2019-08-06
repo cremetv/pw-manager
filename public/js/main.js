@@ -13,18 +13,22 @@ $(document).on('click', 'a[href^="http"]', function(event) {
 });
 
 
+
+/*
+* Fill client list
+*/
 const fillList = clients => {
   const list = $('.client-list');
 
   clients.forEach(client => {
-    let el = `<li class="client">
+    let el = `<li class="client searchable">
           			<div class="client__name">
           				${client.name}
           			</div>
 
           			<div class="client__password">
           				${client.password ? client.password : '-'}
-          				<div class="client__password__copy list-btn copy" data-clipboard-text="${client.password}">
+          				<div class="client__password__copy list-btn copy ${client.password ? 'active' : 'disabled'}" data-clipboard-text="${client.password}">
           					<i class="material-icons">filter_none</i>
           				</div>
           			</div>
@@ -33,7 +37,7 @@ const fillList = clients => {
           				<i class="material-icons">launch</i>
           			</a>
 
-          			<a href="${client.url ? client.url : ''}" target="_blank" class="client__preview-url list-btn ${client.url ? 'active' : 'disabled'}">
+          			<a href="${client.devUrl ? client.devUrl : ''}" target="_blank" class="client__preview-url list-btn ${client.devUrl ? 'active' : 'disabled'}">
           				<i class="material-icons">launch</i>
           			</a>
           		</li>`;
@@ -58,4 +62,39 @@ fs.readFile('./client-passwords.json', 'utf8', (err, json) => {
   } catch(err) {
     console.error('Error parsing JSON string:', err)
   }
+})
+
+
+
+
+/*
+* Window Frame functions
+*/
+const remote = require('electron').remote;
+
+const init = () => {
+  $('.min-btn').on('click', e => {
+    const window = remote.getCurrentWindow()
+    window.minimize()
+  })
+
+  $('.max-btn').on('click', e => {
+    const window = remote.getCurrentWindow()
+    if (!window.isMaximized()) {
+      window.maximize()
+      $('.max-btn').removeClass('maximize').addClass('unmaximize')
+    } else {
+      window.unmaximize()
+      $('.max-btn').removeClass('unmaximize').addClass('maximize')
+    }
+  })
+
+  $('.close-btn').on('click', e => {
+    const window = remote.getCurrentWindow()
+    window.close()
+  })
+}
+
+$(document).ready(() => {
+  init()
 })

@@ -2,77 +2,110 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>MM Passwort Manager</title>
+    <title>MM Password Manager</title>
 
     <link rel="stylesheet" href="public/css/style.min.css">
   </head>
   <body>
+
+    <div class="control-bar">
+      <div class="app-icon">
+        <img src="public/images/icon.png" alt="">
+      </div>
+
+      <div class="app-title">
+        MM Password Manager
+      </div>
+
+      <div class="app-drag"></div>
+
+      <div class="btn min-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 19H18V21H6V19Z" fill="black"/>
+        </svg>
+      </div>
+
+      <div class="btn max-btn maximize">
+        <div class="max">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3 3H21V21H3V3ZM19 5H5V19H19V5Z" fill="black"/>
+          </svg>
+        </div>
+        <div class="un-max">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H19V21H3V5ZM17.2222 6.77778H4.77778V19.2222H17.2222V6.77778Z" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M6 2H22V18H19V16.2222H20.2222V3.77778H7.77778V5H6V2Z" fill="black"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="btn close-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="black"/>
+        </svg>
+      </div>
+    </div>
+
     <nav class="main-nav">
-	<div class="logo">
-		Logo
-	</div>
+    	<!-- <div class="logo">
+    		Logo
+    	</div> -->
 
-	<div class="search">
-		<input id="search" type="text" placeholder="What are you looking for?">
-		<div class="search__clear">
-			<span class="search-label">Clear the search form</span>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971" class="search__icon search__icon-clear">
-				<path d="M28.228 23.986L47.092 5.122a2.998 2.998 0 0 0 0-4.242 2.998 2.998 0 0 0-4.242 0L23.986 19.744 5.121.88a2.998 2.998 0 0 0-4.242 0 2.998 2.998 0 0 0 0 4.242l18.865 18.864L.879 42.85a2.998 2.998 0 1 0 4.242 4.241l18.865-18.864L42.85 47.091c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879a2.998 2.998 0 0 0 0-4.242L28.228 23.986z"/>
-			</svg>
-		</div>
-		<div class="search__submit">
-			<span class="search-label">Search</span>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966" class="search__icon search__icon-search">
-				<path d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z"/>
-			</svg>
-		</div>
-	</div>
-</nav>
+    	<div class="search">
+    		<input id="search" type="text" placeholder="What are you looking for?">
+    		<div class="search__clear">
+    			<span class="search-label">Clear the search form</span>
+    			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971" class="search__icon search__icon-clear">
+    				<path d="M28.228 23.986L47.092 5.122a2.998 2.998 0 0 0 0-4.242 2.998 2.998 0 0 0-4.242 0L23.986 19.744 5.121.88a2.998 2.998 0 0 0-4.242 0 2.998 2.998 0 0 0 0 4.242l18.865 18.864L.879 42.85a2.998 2.998 0 1 0 4.242 4.241l18.865-18.864L42.85 47.091c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879a2.998 2.998 0 0 0 0-4.242L28.228 23.986z"/>
+    			</svg>
+    		</div>
+    		<div class="search__submit">
+    			<span class="search-label">Search</span>
+    			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966" class="search__icon search__icon-search">
+    				<path d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z"/>
+    			</svg>
+    		</div>
+    	</div>
 
-<main>
-	<ul class="client-list">
+      <div class="mittwald">
+        <a href="https://login.mittwald.de/index.php" target="_blank" class="btn">Login</a>
+      </div>
+    </nav>
 
-		<div class="client overview">
-			<div class="client__name">Kundenname</div>
-			<div class="client__password">Passwort</div>
-			<div class="client__url">URL</div>
-			<div class="client__preview-url">dev</div>
-		</div>
+    <main>
+    	<ul class="client-list">
 
-		<li class="client">
-			<div class="client__name">
-				Lorem ipsum
-			</div>
+    		<li class="client overview">
+    			<div class="client__name">Clientname</div>
+    			<div class="client__password">Password</div>
+    			<div class="client__url">URL</div>
+    			<div class="client__preview-url">dev</div>
+    		</li>
 
-			<div id="client1-password" class="client__password">
-				jGHD7$2MKC
-				<div class="client__password__copy list-btn copy" data-clipboard-target="#client1-password">
-					<i class="material-icons">filter_none</i>
-				</div>
-			</div>
 
-			<div class="client__url list-btn">
-				<i class="material-icons">launch</i>
-			</div>
-
-			<div class="client__preview-url list-btn">
-				<i class="material-icons">launch</i>
-			</div>
-		</li>
-
-	</ul>
-</main>
+    	</ul>
+    </main>
     <!-- <h1>Hello World!</h1>
     We are using node <script>document.write(process.versions.node)</script>,
     Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-
-    <i class="material-icons">face</i>
-
-    <div class="btn" data-clipboard-text="yeet">copy</div>
-
-    <a href="https://login.mittwald.de/index.php">Mittwald login</a> -->
+    and Electron <script>document.write(process.versions.electron)</script>.-->
 
     <script src="public/js/main.min.js"></script>
+    <script src="public/js/components/quicksearch.min.js"></script>
+
+    <script>
+      var qs = $('#search').quicksearch('main li.searchable', {
+        selector: '.client__name',
+      });
+      $('#search').on('click', function() {
+        qs.cache();
+      });
+      $('#search').focus();
+      $(document).ready(() => {
+        setTimeout(() => {
+          qs.cache();
+        }, 1000);
+      });
+    </script>
   </body>
 </html>
