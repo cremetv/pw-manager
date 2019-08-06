@@ -22,7 +22,7 @@
 	background: $white;
 	transition: background .25s $cubic;
 	padding-right: 1rem;
-	
+
 	&:hover {
 		background: darken($bg, 2%);
 
@@ -88,6 +88,8 @@
 		cursor: pointer;
 		transition: background .25s $cubic;
 		user-select: none;
+    text-decoration: none;
+    color: $grey;
 
 		+ .list-btn {
 			margin-left: 1rem;
@@ -96,6 +98,15 @@
 		&:hover {
 			background: rgba(0,0,0,.1);
 		}
+
+    &.disabled {
+      opacity: .2;
+      pointer-events: none;
+
+      &:hover {
+        background: transparent;
+      }
+    }
 	}
 
 

@@ -601,11 +601,18 @@ body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none; }
+    user-select: none;
+    text-decoration: none;
+    color: #484847; }
     .client .list-btn + .list-btn {
       margin-left: 1rem; }
     .client .list-btn:hover {
       background: rgba(0, 0, 0, 0.1); }
+    .client .list-btn.disabled {
+      opacity: .2;
+      pointer-events: none; }
+      .client .list-btn.disabled:hover {
+        background: transparent; }
   .client.overview {
     background: #f9f8f7;
     border-top: 1px solid #eeebe8;
