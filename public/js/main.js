@@ -58,7 +58,21 @@ const fillList = clients => {
 
 fs.readFile('./client-passwords.json', 'utf8', (err, json) => {
   if (err) {
-    console.err('File read failed', err)
+    console.error('File read failed. Trying example file. ', err)
+    // return
+    fs.readFile('./client-passwords-EXAMPLE.json', 'utf8', (err, json) => {
+      if (err) {
+        console.error('File read failed', err)
+        return
+      };
+      try {
+        const content = JSON.parse(json)
+        const clients = content.clients
+        fillList(clients)
+      } catch (err) {
+        console.error('Error parsing JSON string:', err)
+      }
+    })
     return
   }
 
@@ -66,9 +80,9 @@ fs.readFile('./client-passwords.json', 'utf8', (err, json) => {
     const content = JSON.parse(json)
     const clients = content.clients
 
-    fillList(clients);
+    fillList(clients)
 
-  } catch(err) {
+  } catch (err) {
     console.error('Error parsing JSON string:', err)
   }
 })
