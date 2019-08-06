@@ -121,3 +121,41 @@ const init = () => {
 $(document).ready(() => {
   init()
 })
+
+
+
+
+
+/*
+* SEARCH
+*/
+const clearSearch = () => {
+	$('#search').val('');
+	$('.search__icon-clear').removeClass('show');
+  $('.searchable').css('display', 'flex');
+  $('#search').focus();
+}
+
+const search = () => {
+	let searchTerm = $('#search').val();
+	console.log(searchTerm);
+}
+
+$('#search').on('keyup', function(e) {
+	e.preventDefault();
+	let input = $(this).val();
+
+	let key = e.which;
+	if (key === 13) {
+		search();
+	}
+
+	if (input != '') {
+		$('.search__icon-clear').addClass('show');
+	} else {
+		$('.search__icon-clear').removeClass('show');
+	}
+});
+
+$('.search__icon-clear').on('click', clearSearch);
+$('.search__icon-search').on('click', search);
