@@ -1,11 +1,10 @@
 {
   "name": "pw-manager",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "password manager for personal usage",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -22,6 +21,8 @@
   },
   "dependencies": {
     "clipboard": "^2.0.4",
-    "gsap": "^2.1.3"
+    "gsap": "^2.1.3",
+    "jquery": "^3.4.1",
+    "material-design-icons": "^3.0.1"
   }
 }

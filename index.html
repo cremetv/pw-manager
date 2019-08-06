@@ -3,15 +3,476 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
+
+    <link rel="stylesheet" href="public/css/style.min.css">
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <nav class="main-nav">
+	<div class="logo">
+		Logo
+	</div>
+
+	<div class="search">
+		<input id="search" type="text" placeholder="What are you looking for?">
+		<div class="search__clear">
+			<span class="search-label">Clear the search form</span>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971" class="search__icon search__icon-clear">
+				<path d="M28.228 23.986L47.092 5.122a2.998 2.998 0 0 0 0-4.242 2.998 2.998 0 0 0-4.242 0L23.986 19.744 5.121.88a2.998 2.998 0 0 0-4.242 0 2.998 2.998 0 0 0 0 4.242l18.865 18.864L.879 42.85a2.998 2.998 0 1 0 4.242 4.241l18.865-18.864L42.85 47.091c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879a2.998 2.998 0 0 0 0-4.242L28.228 23.986z"/>
+			</svg>
+		</div>
+		<div class="search__submit">
+			<span class="search-label">Search</span>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966" class="search__icon search__icon-search">
+				<path d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z"/>
+			</svg>
+		</div>
+	</div>
+</nav>
+
+<main>
+	<ul class="client-list">
+
+		<div class="client overview">
+			<div class="client__name">Kundenname</div>
+			<div class="client__password">Passwort</div>
+			<div class="client__url">URL</div>
+			<div class="client__preview-url">dev</div>
+		</div>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div id="client1-password" class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn copy" data-clipboard-target="#client1-password">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+		<li class="client">
+			<div class="client__name">
+				Lorem ipsum
+			</div>
+
+			<div class="client__password">
+				jGHD7$2MKC
+				<div class="client__password__copy list-btn">
+					<i class="material-icons">filter_none</i>
+				</div>
+			</div>
+
+			<div class="client__url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+
+			<div class="client__preview-url list-btn">
+				<i class="material-icons">launch</i>
+			</div>
+		</li>
+
+	</ul>
+</main>
+    <!-- <h1>Hello World!</h1>
     We are using node <script>document.write(process.versions.node)</script>,
     Chrome <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
 
+    <i class="material-icons">face</i>
+
     <div class="btn" data-clipboard-text="yeet">copy</div>
 
-    <script src="public/js/main.js"></script>
+    <a href="https://login.mittwald.de/index.php">Mittwald login</a> -->
+
+    <script src="public/js/main.min.js"></script>
   </body>
 </html>

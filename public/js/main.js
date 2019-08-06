@@ -1,8 +1,13 @@
+const $ = require('jquery');
 const ClipboardJS = require('clipboard');
 const gsap = require('gsap');
 
-new ClipboardJS('.btn');
+new ClipboardJS('.copy');
 
-// TweenMax.to('.btn', 4, {
-//   x: 200
-// });
+
+var shell = require('electron').shell;
+//open links externally by default
+$(document).on('click', 'a[href^="http"]', function(event) {
+    event.preventDefault();
+    shell.openExternal(this.href);
+});

@@ -1,0 +1,12 @@
+.main-nav {
+	background: $bg;
+	padding: 1rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	.search {
+		flex: 1;
+		margin-left: 1rem;
+	}
+}

@@ -1,0 +1,45 @@
+/* scrollbar */
+@mixin scrollbar($size: 6px, $thumbColor: darken($bg, 30%), $trackColor: darken($bg, 15%), $borderRadius: 3px) {
+
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+
+    &-button {
+      width: 0px;
+      height: 0px;
+    }
+
+    &-thumb {
+      background: $thumbColor;
+      border: 0px none #ffffff;
+      border-radius: $borderRadius;
+
+      &:hover {
+        background: lighten($thumbColor, 5%);
+      }
+
+      &:active {
+        background: darken($thumbColor, 5%);
+      }
+    }
+
+    &-track {
+      background: $trackColor;
+      border: 0px none #ffffff;
+      border-radius: 0;
+
+      // &:hover {
+      //   background: lighten($trackColor, 5%);
+      // }
+      //
+      // &:active {
+      //   background: darken($trackColor, 5%);
+      // }
+    }
+
+    &-corner {
+      background: transparent;
+    }
+  }
+}
