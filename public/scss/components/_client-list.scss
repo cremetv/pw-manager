@@ -47,6 +47,7 @@
 		-o-text-overflow: ellipsis;
 		text-overflow: ellipsis;
 		transition: transform .25s $cubic;
+		font-weight: $fw-bold;
 	}
 
 	&__username {
