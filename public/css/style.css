@@ -624,9 +624,9 @@ body {
   .client:hover {
     background: #f5f3f1; }
     .client:hover .client__name {
-      -webkit-transform: translateX(1rem);
-      -ms-transform: translateX(1rem);
-      transform: translateX(1rem); }
+      -webkit-transform: translateX(0.5rem);
+      -ms-transform: translateX(0.5rem);
+      transform: translateX(0.5rem); }
   .client:not(.overview) + .client {
     border-top: 1px solid rgba(88, 77, 85, 0.1); }
   .client > div {
