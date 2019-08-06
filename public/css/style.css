@@ -668,7 +668,7 @@ body {
     .client__username:hover {
       opacity: 1; }
     .client__username__copy {
-      margin-left: 1rem; }
+      margin-left: .5rem; }
   .client__password {
     padding: 1rem;
     display: -webkit-box;
@@ -692,7 +692,7 @@ body {
     .client__password:hover {
       opacity: 1; }
     .client__password__copy {
-      margin-left: 1rem; }
+      margin-left: .5rem; }
   .client .list-btn {
     height: 3rem;
     width: 3rem;

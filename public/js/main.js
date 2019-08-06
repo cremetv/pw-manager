@@ -20,6 +20,8 @@ $(document).on('click', 'a[href^="http"]', function(event) {
 const fillList = clients => {
   const list = $('.client-list');
 
+  clients.reverse();
+
   clients.forEach(client => {
     let el = `<li class="client searchable">
           			<div class="client__name">

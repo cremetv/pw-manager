@@ -95,7 +95,7 @@
 
     <script>
       var qs = $('#search').quicksearch('main li.searchable', {
-        selector: '.client__name',
+        selector: '.client__name, .client__username, .client__password',
       });
       $('#search').on('click', function() {
         qs.cache();
