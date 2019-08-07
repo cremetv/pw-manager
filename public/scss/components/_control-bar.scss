@@ -85,6 +85,12 @@
       }
     }
   }
+
+  .close-btn {
+    &:hover {
+      background: $error;
+    }
+  }
 }
 
 html.no-focus {

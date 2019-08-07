@@ -470,6 +470,8 @@ body {
     display: none; }
   .control-bar .max-btn.unmaximize .un-max {
     display: block; }
+  .control-bar .close-btn:hover {
+    background: #EF3340; }
 
 html.no-focus .control-bar {
   opacity: .4; }

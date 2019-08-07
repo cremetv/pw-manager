@@ -23,6 +23,10 @@
 	transition: background .25s $cubic;
 	padding-right: 1rem;
 
+	// display: grid;
+	// grid-template-rows: 1fr;
+	// grid-template-columns: 2fr 1fr 1fr 3rem 3rem;
+
 	&:hover {
 		background: darken($bg, 2%);
 
