@@ -32,15 +32,27 @@ const createWindow = () => {
 }
 
 app.on('ready', createWindow)
-// app.on('ready', () => {
-//   tray = new Tray('public/images/icon.png')
-//   const contextMenu = Menu.buildFromTemplate([
-//     { label: 'Item1', type: 'radio' },
-//     { label: 'Item2', type: 'radio', checked: true }
-//   ])
-//   tray.setToolTip('MM Passwort Manager')
-//   tray.setContextMenu(contextMenu)
-// })
+app.on('ready', () => {
+  tray = new Tray('public/images/icon.png')
+  const contextMenu = Menu.buildFromTemplate([
+    { label: 'Item1', type: 'radio' },
+    { label: 'Item2', type: 'radio', checked: true }
+  ])
+  tray.setToolTip('MM Passwort Manager')
+  tray.setContextMenu(contextMenu)
+
+  tray.on('click', () => {
+    if (win.isVisible() == false) win.show()
+    win.focus()
+    // win.isVisible() ? win.hide() : win.show()
+  })
+  win.on('show', () => {
+    tray.setHighlightMode('always')
+  })
+  win.on('hide', () => {
+    tray.setHighlightMode('never')
+  })
+})
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

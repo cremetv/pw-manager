@@ -471,6 +471,9 @@ body {
   .control-bar .max-btn.unmaximize .un-max {
     display: block; }
 
+html.no-focus .control-bar {
+  opacity: .4; }
+
 .main-nav {
   background: #eeebe8;
   padding: 1rem;

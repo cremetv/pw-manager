@@ -1,3 +1,4 @@
+const electron = require('electron');
 const $ = require('jquery');
 const ClipboardJS = require('clipboard');
 const gsap = require('gsap');
@@ -12,6 +13,15 @@ $(document).on('click', 'a[href^="http"]', function(event) {
     shell.openExternal(this.href);
 });
 
+
+
+const win = electron.remote.getCurrentWindow();
+win.on('blur', () => {
+  $('html').addClass('no-focus')
+})
+win.on('focus', () => {
+  $('html').removeClass('no-focus')
+})
 
 
 /*

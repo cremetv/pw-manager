@@ -86,3 +86,9 @@
     }
   }
 }
+
+html.no-focus {
+  .control-bar {
+    opacity: .4;
+  }
+}
