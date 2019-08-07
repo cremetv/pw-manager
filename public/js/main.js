@@ -24,6 +24,37 @@ win.on('focus', () => {
 })
 
 
+
+/*
+* Menu Toggle
+*/
+const burger = $('.main-nav .burger')
+const menu = $('.main-nav .menu')
+const mainMenu = $('.main-nav .main-menu')
+
+burger.on('click', e => {
+  e.preventDefault()
+
+  if (menu.hasClass('open')) {
+    menu.removeClass('open')
+    TweenMax.to(mainMenu, .25, {
+      height: 0,
+      ease: Quad.easeInOut
+    })
+  } else {
+    menu.addClass('open')
+    TweenMax.set(mainMenu, {
+      height: 'auto'
+    })
+    TweenMax.from(mainMenu, .4, {
+      height: 0,
+      ease: Quad.easeInOut
+    })
+  }
+})
+
+
+
 /*
 * Fill client list
 */
@@ -143,6 +174,7 @@ const clearSearch = () => {
 	$('#search').val('');
 	$('.search__icon-clear').removeClass('show');
   $('.searchable').css('display', 'flex');
+  $('#noresults').css('display', 'none');
   $('#search').focus();
 }
 
@@ -160,11 +192,11 @@ $('#search').on('keyup', function(e) {
 		search();
 	}
 
-	if (input != '') {
-		$('.search__icon-clear').addClass('show');
-	} else {
-		$('.search__icon-clear').removeClass('show');
-	}
+	// if (input != '') {
+	// 	$('.search__icon-clear').addClass('show');
+	// } else {
+	// 	$('.search__icon-clear').removeClass('show');
+	// }
 });
 
 $('.search__icon-clear').on('click', clearSearch);

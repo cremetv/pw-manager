@@ -1,3 +1,19 @@
+.noresults {
+	display: none;
+	width: 100%;
+	flex: 1;
+
+	&__wrap {
+		color: $grey;
+		padding: 1rem;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
 .client-list {
 	list-style: none;
 	margin: 0;

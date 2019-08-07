@@ -1,4 +1,7 @@
 main {
 	width: 100%;
-	max-height: calc(100% - 74px - 2rem);
+	flex: 1;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
 }

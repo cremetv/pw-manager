@@ -1,22 +1,133 @@
 .main-nav {
 	background: darken($bg, 5%);
-	padding: 1rem;
+	// padding: 1rem;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 
-	.search {
-		flex: 1;
-		// margin-left: 1rem;
+	a {
+		color: #ffaf50;
+		font-weight: $fw-bold;
+		text-decoration: none;
 	}
 
-	.mittwald {
-		margin-left: 1rem;
+	.search {
+		flex: 1;
+		margin: 1rem 0;
+	}
 
-		a {
-			color: #ffaf50;
-			font-weight: $fw-bold;
-			text-decoration: none;
+	.mittwald, .gh-pw {
+		padding: 1rem;
+	}
+
+	.gh-pw {
+		padding-right: 0;
+	}
+
+	.menu {
+		position: relative;
+		padding: 1rem;
+
+		&.open {
+			.burger {
+				> span {
+					background: transparent;
+
+					&:before, &:after {
+						background: $grey;
+						transition: transform .15s $cubic .15s, top .15s $cubic, bottom .15s $cubic;
+					}
+
+					&:before {
+						top: 0;
+						transform: rotate(45deg);
+					}
+
+					&:after {
+						bottom: 0;
+						transform: rotate(-45deg);
+					}
+				}
+			}
+		}
+
+		.burger {
+			width: 2rem;
+			height: 2rem;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+
+			> span {
+				width: 100%;
+				height: 2px;
+				background: $grey;
+				position: relative;
+
+				&:before, &:after {
+					content: '';
+					position: absolute;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: inherit;
+					transition: transform .15s $cubic, top .15s $cubic .15s, bottom .15s $cubic .15s;
+				}
+
+				&:before {
+					top: .5rem;
+				}
+
+				&:after {
+					bottom: .5rem;
+				}
+			}
+		}
+
+		.main-menu {
+			position: absolute;
+			left: 0;
+			top: 100%;
+			background: darken($bg, 5%);
+			z-index: 1000;
+			box-shadow: $depth-2;
+			max-width: 100vw;
+			overflow: hidden;
+			height: 0;
+
+			&__wrap {
+				padding: 1rem;
+
+				> ul {
+					margin: 0;
+					padding: 0;
+					list-style: none;
+					max-width: 100%;
+
+					li {
+						font-size: 1.2rem;
+
+						+ li {
+							margin-top: .5rem;
+						}
+
+						a {
+							display: block;
+							padding: .5rem 1rem;
+							color: $grey;
+							text-decoration: none;
+							transition: transform .25s $cubic;
+							white-space: nowrap;
+
+							&:hover {
+								transform: translateX(.25rem);
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

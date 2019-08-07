@@ -51,6 +51,20 @@
     		Logo
     	</div> -->
 
+      <div class="menu">
+        <div class="burger"><span></span></div>
+
+        <div class="main-menu">
+          <div class="main-menu__wrap">
+            <ul>
+              <li><a href="#!">SV</a></li>
+              <li><a href="#!">is one hell of a </a></li>
+              <li><a href="#!">cutie</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     	<div class="search">
     		<input id="search" type="text" placeholder="What are you looking for?">
     		<div class="search__clear">
@@ -66,6 +80,10 @@
     			</svg>
     		</div>
     	</div>
+
+      <div class="gh-pw">
+        <a class="copy" href="#!" data-clipboard-text="eP7FGY7V2zHdKJR">GH pw</a>
+      </div>
 
       <div class="mittwald">
         <a href="https://login.mittwald.de/index.php" target="_blank" class="btn">Login</a>
@@ -84,6 +102,11 @@
 
 
     	</ul>
+      <div class="noresults" id="noresults">
+        <div class="noresults__wrap">
+          nothing found
+        </div>
+      </div>
     </main>
     <!-- <h1>Hello World!</h1>
     We are using node <script>document.write(process.versions.node)</script>,
@@ -96,11 +119,14 @@
     <script>
       var qs = $('#search').quicksearch('main li.searchable', {
         selector: '.client__name, .client__username, .client__password',
+        noResults: '#noresults'
       });
       $('#search').on('click', function() {
         qs.cache();
       });
+
       $('#search').focus();
+
       $(document).ready(() => {
         setTimeout(() => {
           qs.cache();
