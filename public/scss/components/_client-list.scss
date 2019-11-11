@@ -24,6 +24,7 @@
 	max-height: 100%;
 	overflow: auto;
 	@include scrollbar();
+	overflow-x: hidden;
 
 	.client:last-child {
 		border-bottom: 1px solid transparentize($secondary, .9);
@@ -32,16 +33,30 @@
 
 .client {
 	width: 100%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+	// display: flex;
+	// flex-direction: row;
+	// align-items: center;
 	background: $white;
 	transition: background .25s $cubic;
-	padding-right: 1rem;
 
 	// display: grid;
 	// grid-template-rows: 1fr;
 	// grid-template-columns: 2fr 1fr 1fr 3rem 3rem;
+
+	display: grid;
+	grid: "name name name name name name"
+				"id id url url dev dev"
+				"username username username pw pw pw";
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(3, 3rem);
+
+	align-items: center;
+
+	@media only screen and (min-width: 840px) {
+		grid: "id name username pw url dev";
+		grid-template-columns: 3rem 1fr 1fr 1fr 3rem 3rem;
+		grid-template-rows: 1fr;
+	}
 
 	&:hover {
 		background: darken($bg, 2%);
@@ -59,8 +74,16 @@
 		line-height: 3rem;
 	}
 
+	&__number {
+		grid-area: id;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
 	&__name {
-		padding: 1rem;
+		grid-area: name;
+		padding: 0 1rem;
 		flex: 1;
 		white-space: nowrap;
 		overflow: hidden;
@@ -68,19 +91,29 @@
 		text-overflow: ellipsis;
 		transition: transform .25s $cubic;
 		font-weight: $fw-bold;
+
+		@media only screen and (min-width: 840px) {
+			padding: 1rem;
+		}
 	}
 
 	&__username {
-		padding: 1rem;
+		grid-area: username;
+		padding: 0 1rem;
 		display: flex;
 		flex-direction: row;
-		justify-content: flex-end;
+		justify-content: center;
 		white-space: nowrap;
 		overflow: hidden;
 		-o-text-overflow: ellipsis;
 		text-overflow: ellipsis;
 		opacity: .6;
 		transition: opacity .25s $cubic;
+
+		@media only screen and (min-width: 840px) {
+			justify-content: flex-end;
+			padding: 1rem;
+		}
 
 		&:hover {
 			opacity: 1;
@@ -92,16 +125,22 @@
 	}
 
 	&__password {
-		padding: 1rem;
+		grid-area: pw;
+		padding: 0 1rem;
 		display: flex;
 		flex-direction: row;
-		justify-content: flex-end;
+		justify-content: center;
 		white-space: nowrap;
 		overflow: hidden;
 		-o-text-overflow: ellipsis;
 		text-overflow: ellipsis;
 		opacity: .6;
 		transition: opacity .25s $cubic;
+
+		@media only screen and (min-width: 840px) {
+			justify-content: flex-end;
+			padding: 1rem;
+		}
 
 		&:hover {
 			opacity: 1;
@@ -113,11 +152,17 @@
 	}
 
 	&__url {
-
+		grid-area: url;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	&__preview-url {
-
+		grid-area: dev;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 
@@ -161,22 +206,33 @@
 		z-index: 1;
 		box-shadow: 0 2px 4px rgba(0,0,0,.05);
 
+		@media only screen and (max-width: 839px) {
+			grid-template-rows: repeat(3, 1.5rem);
+
+			> div {
+				line-height: 1.5rem;
+			}
+		}
+
 		> div {
 			font-weight: $fw-bold;
 		}
 
-		.client__name, .client__password {
+		.client__name, .client__username, .client__password {
 			padding: 0 1rem;
 			opacity: 1;
 		}
 
-		.client__url, .client__preview-url {
-			width: 3rem;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-left: 1rem;
+		.client__login {
+			text-align: right;
 		}
+
+		// .client__url, .client__preview-url {
+		// 	width: 3rem;
+		// 	display: flex;
+		// 	justify-content: center;
+		// 	align-items: center;
+		// }
 
 		&:hover {
 			background: $bg;

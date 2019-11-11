@@ -705,7 +705,8 @@ html.no-focus .control-bar {
   -ms-flex-direction: column;
   flex-direction: column;
   max-height: 100%;
-  overflow: auto; }
+  overflow: auto;
+  overflow-x: hidden; }
   .client-list::-webkit-scrollbar {
     width: 6px;
     height: 6px; }
@@ -731,21 +732,27 @@ html.no-focus .control-bar {
 
 .client {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   background: #fff;
   -webkit-transition: background 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition: background 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: background 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  padding-right: 1rem; }
+  display: -ms-grid;
+  display: grid;
+  grid: "name name name name name name" "id id url url dev dev" "username username username pw pw pw";
+  -ms-grid-columns: (1fr)[6];
+  grid-template-columns: repeat(6, 1fr);
+  -ms-grid-rows: (3rem)[3];
+  grid-template-rows: repeat(3, 3rem);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  @media only screen and (min-width: 840px) {
+    .client {
+      grid: "id name username pw url dev";
+      -ms-grid-columns: 3rem 1fr 1fr 1fr 3rem 3rem;
+      grid-template-columns: 3rem 1fr 1fr 1fr 3rem 3rem;
+      -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr; } }
   .client:hover {
     background: #f5f3f1; }
     .client:hover .client__name {
@@ -756,8 +763,20 @@ html.no-focus .control-bar {
     border-top: 1px solid rgba(88, 77, 85, 0.1); }
   .client > div {
     line-height: 3rem; }
+  .client__number {
+    grid-area: id;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
   .client__name {
-    padding: 1rem;
+    grid-area: name;
+    padding: 0 1rem;
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -771,8 +790,12 @@ html.no-focus .control-bar {
     transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     font-weight: 700; }
+    @media only screen and (min-width: 840px) {
+      .client__name {
+        padding: 1rem; } }
   .client__username {
-    padding: 1rem;
+    grid-area: username;
+    padding: 0 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -780,9 +803,9 @@ html.no-focus .control-bar {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     white-space: nowrap;
     overflow: hidden;
     -o-text-overflow: ellipsis;
@@ -791,12 +814,19 @@ html.no-focus .control-bar {
     -webkit-transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     -o-transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    @media only screen and (min-width: 840px) {
+      .client__username {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        padding: 1rem; } }
     .client__username:hover {
       opacity: 1; }
     .client__username__copy {
       margin-left: .5rem; }
   .client__password {
-    padding: 1rem;
+    grid-area: pw;
+    padding: 0 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -804,9 +834,9 @@ html.no-focus .control-bar {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     white-space: nowrap;
     overflow: hidden;
     -o-text-overflow: ellipsis;
@@ -815,10 +845,38 @@ html.no-focus .control-bar {
     -webkit-transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     -o-transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    @media only screen and (min-width: 840px) {
+      .client__password {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        padding: 1rem; } }
     .client__password:hover {
       opacity: 1; }
     .client__password__copy {
       margin-left: .5rem; }
+  .client__url {
+    grid-area: url;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .client__preview-url {
+    grid-area: dev;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
   .client .list-btn {
     height: 3rem;
     width: 3rem;
@@ -860,23 +918,19 @@ html.no-focus .control-bar {
     z-index: 1;
     -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); }
+    @media only screen and (max-width: 839px) {
+      .client.overview {
+        -ms-grid-rows: (1.5rem)[3];
+        grid-template-rows: repeat(3, 1.5rem); }
+        .client.overview > div {
+          line-height: 1.5rem; } }
     .client.overview > div {
       font-weight: 700; }
-    .client.overview .client__name, .client.overview .client__password {
+    .client.overview .client__name, .client.overview .client__username, .client.overview .client__password {
       padding: 0 1rem;
       opacity: 1; }
-    .client.overview .client__url, .client.overview .client__preview-url {
-      width: 3rem;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      margin-left: 1rem; }
+    .client.overview .client__login {
+      text-align: right; }
     .client.overview:hover {
       background: #f9f8f7; }
       .client.overview:hover .client__name {

@@ -65,31 +65,41 @@ const fillList = clients => {
 
   clients.forEach(client => {
     let el = `<li class="client searchable">
-          			<div class="client__name">
+                <div class="client__number">
+                  <div class="client__number__copy list-btn copy ${client.clientNr ? 'active' : 'disabled'}" data-clipboard-text="${client.clientNr}" title="${client.clientNr ? 'copy ' + client.clientNr : ''}">
+          					<i class="material-icons">filter_none</i>
+          				</div>
+                </div>
+
+                <div class="client__name">
           				${client.name}
           			</div>
 
                 <div class="client__username">
           				${client.username ? client.username : '-'}
-          				<div class="client__username__copy list-btn copy ${client.username ? 'active' : 'disabled'}" data-clipboard-text="${client.username}">
+          				<div class="client__username__copy list-btn copy ${client.username ? 'active' : 'disabled'}" data-clipboard-text="${client.username}" title="${client.username ? 'copy username' : ''}">
           					<i class="material-icons">filter_none</i>
           				</div>
           			</div>
 
           			<div class="client__password">
           				${client.password ? client.password : '-'}
-          				<div class="client__password__copy list-btn copy ${client.password ? 'active' : 'disabled'}" data-clipboard-text="${client.password}">
+          				<div class="client__password__copy list-btn copy ${client.password ? 'active' : 'disabled'}" data-clipboard-text="${client.password}" title="${client.password ? 'copy password' : ''}">
           					<i class="material-icons">filter_none</i>
           				</div>
           			</div>
 
-          			<a href="${client.url ? client.url : ''}" target="_blank" class="client__url list-btn ${client.url ? 'active' : 'disabled'}">
-          				<i class="material-icons">launch</i>
-          			</a>
+                <div class="client__url">
+                  <a href="${client.url ? client.url : ''}" target="_blank" class="client__url__copy list-btn ${client.url ? 'active' : 'disabled'}" title="${client.url ? 'open URL' : ''}">
+                    <i class="material-icons">launch</i>
+                  </a>
+                </div>
 
-          			<a href="${client.devUrl ? client.devUrl : ''}" target="_blank" class="client__preview-url list-btn ${client.devUrl ? 'active' : 'disabled'}">
-          				<i class="material-icons">launch</i>
-          			</a>
+                <div class="client__preview-url">
+                  <a href="${client.devUrl ? client.devUrl : ''}" target="_blank" class="client__preview-url__copy list-btn ${client.devUrl ? 'active' : 'disabled'}" title="${client.devUrl ? 'open preview URL' : ''}">
+                    <i class="material-icons">launch</i>
+                  </a>
+                </div>
           		</li>`;
 
     list.append(el);
