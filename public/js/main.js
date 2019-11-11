@@ -66,7 +66,7 @@ const fillList = clients => {
   clients.forEach(client => {
     let el = `<li class="client searchable">
                 <div class="client__number">
-                  <div class="client__number__copy list-btn copy ${client.clientNr ? 'active' : 'disabled'}" data-clipboard-text="${client.clientNr}" title="${client.clientNr ? 'copy ' + client.clientNr : ''}">
+                  <div class="client__number__copy list-btn copy ${client.clientNr ? 'active' : 'disabled'}" data-clipboard-text="${client.clientNr}" title="${client.clientNr ? 'copy ' + client.clientNr : ''}" data-tooltip="Kundennummer" data-tooltip-position="right" data-toast="${client.clientNr} copied">
           					<i class="material-icons">filter_none</i>
           				</div>
                 </div>
@@ -77,33 +77,33 @@ const fillList = clients => {
 
                 <div class="client__username">
           				${client.username ? client.username : '-'}
-          				<div class="client__username__copy list-btn copy ${client.username ? 'active' : 'disabled'}" data-clipboard-text="${client.username}" title="${client.username ? 'copy username' : ''}">
+          				<div class="client__username__copy list-btn copy ${client.username ? 'active' : 'disabled'}" data-clipboard-text="${client.username}" title="${client.username ? 'copy username' : ''}" data-tooltip="Login" data-tooltip-position="right" data-toast="${client.username} copied">
           					<i class="material-icons">filter_none</i>
           				</div>
           			</div>
 
           			<div class="client__password">
           				${client.password ? client.password : '-'}
-          				<div class="client__password__copy list-btn copy ${client.password ? 'active' : 'disabled'}" data-clipboard-text="${client.password}" title="${client.password ? 'copy password' : ''}">
+          				<div class="client__password__copy list-btn copy ${client.password ? 'active' : 'disabled'}" data-clipboard-text="${client.password}" title="${client.password ? 'copy password' : ''}" data-tooltip="Password" data-tooltip-position="left" data-toast="${client.password} copied">
           					<i class="material-icons">filter_none</i>
           				</div>
           			</div>
 
                 <div class="client__url">
-                  <a href="${client.url ? client.url : ''}" target="_blank" class="client__url__copy list-btn ${client.url ? 'active' : 'disabled'}" title="${client.url ? 'open URL' : ''}">
+                  <a href="${client.url ? client.url : ''}" target="_blank" class="client__url__copy list-btn ${client.url ? 'active' : 'disabled'}" title="${client.url ? 'open URL' : ''}" data-tooltip="URL" data-tooltip-position="left">
                     <i class="material-icons">launch</i>
                   </a>
                 </div>
 
                 <div class="client__preview-url">
-                  <a href="${client.devUrl ? client.devUrl : ''}" target="_blank" class="client__preview-url__copy list-btn ${client.devUrl ? 'active' : 'disabled'}" title="${client.devUrl ? 'open preview URL' : ''}">
+                  <a href="${client.devUrl ? client.devUrl : ''}" target="_blank" class="client__preview-url__copy list-btn ${client.devUrl ? 'active' : 'disabled'}" title="${client.devUrl ? 'open preview URL' : ''}" data-tooltip="Preview URL" data-tooltip-position="left">
                     <i class="material-icons">launch</i>
                   </a>
                 </div>
           		</li>`;
 
     list.append(el);
-  })
+  });
 }
 
 

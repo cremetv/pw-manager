@@ -1,0 +1,17 @@
+.toast {
+  position: fixed;
+  right: 1rem;
+  top: 7rem;
+  background: transparentize($grey, .1);
+  color: $white;
+  padding: 1rem;
+  box-shadow: $depth-3;
+  opacity: 0;
+  transform: translateY(100px);
+  z-index: 10000;
+
+  &.error {
+    background: $error;
+    color: $white;
+  }
+}

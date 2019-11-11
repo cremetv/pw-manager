@@ -938,6 +938,66 @@ html.no-focus .control-bar {
         -ms-transform: translateX(0);
         transform: translateX(0); }
 
+.tooltip {
+  position: fixed;
+  background: #484847;
+  padding: .5rem;
+  color: #fff;
+  left: 0;
+  top: 0;
+  display: none;
+  -webkit-box-shadow: 0 2px 3px rgba(50, 50, 93, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 3px rgba(50, 50, 93, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1); }
+  .tooltip:before {
+    content: '';
+    position: absolute;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-style: solid; }
+  .tooltip.bottom:before {
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #484847 transparent; }
+  .tooltip.top:before {
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-width: 10px 10px 0 10px;
+    border-color: #484847 transparent transparent transparent; }
+  .tooltip.left:before {
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #484847; }
+  .tooltip.right:before {
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #484847 transparent transparent; }
+
+.toast {
+  position: fixed;
+  right: 1rem;
+  top: 7rem;
+  background: rgba(72, 72, 71, 0.9);
+  color: #fff;
+  padding: 1rem;
+  -webkit-box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  transform: translateY(100px);
+  z-index: 10000; }
+  .toast.error {
+    background: #EF3340;
+    color: #fff; }
+
 main {
   width: 100%;
   -webkit-box-flex: 1;
