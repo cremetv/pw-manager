@@ -45,7 +45,7 @@
 
 	display: grid;
 	grid: "name name name name name name"
-				"id id url url dev dev"
+				"id aid ids url url dev"
 				"username username username pw pw pw";
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: repeat(3, 3rem);
@@ -53,8 +53,8 @@
 	align-items: center;
 
 	@media only screen and (min-width: 840px) {
-		grid: "id name username pw url dev";
-		grid-template-columns: 3rem 1fr 1fr 1fr 3rem 3rem;
+		grid: "id aid ids name username pw url dev";
+		grid-template-columns: 3rem 3rem 3rem 1fr 1fr 1fr 3rem 3rem;
 		grid-template-rows: 1fr;
 	}
 
@@ -76,6 +76,20 @@
 
 	&__number {
 		grid-area: id;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__projectNumber {
+		grid-area: aid;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__combinedNumbers {
+		grid-area: ids;
 		display: flex;
 		justify-content: center;
 		align-items: center;

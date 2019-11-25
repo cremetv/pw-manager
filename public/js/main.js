@@ -71,6 +71,18 @@ const fillList = clients => {
           				</div>
                 </div>
 
+                <div class="client__projectNumber">
+                  <div class="client__projectNumber_copy list-btn copy ${client.projectNr ? 'active' : 'disabled'}" data-clipboard-text="${client.projectNr}" title="${client.projectNr ? 'copy' + client.projectNr : ''}" data-tooltip="Auftragsnummer" data-tooltip-position="right" data-toast="${client.projectnr} copied">
+                    <i class="material-icons">filter_none</i>
+                  </div>
+                </div>
+
+                <div class="client__combinedNumbers">
+                  <div class="client__combinedNumbers_copy list-btn copy ${client.clientNr && client.projectNr ? 'active' : 'disabled'}" data-clipboard-text="Kd-Nr. ${client.clientNr} Auftrags-Nr.: ${client.projectNr}" data-tooltip="KdNr & Auftragsnummer" data-tooltip-position="right" data-toast="Nummern copied">
+                    <i class="material-icons">filter_none</i>
+                  </div>
+                </div>
+
                 <div class="client__name">
           				${client.name}
           			</div>

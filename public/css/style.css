@@ -738,7 +738,7 @@ html.no-focus .control-bar {
   transition: background 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: -ms-grid;
   display: grid;
-  grid: "name name name name name name" "id id url url dev dev" "username username username pw pw pw";
+  grid: "name name name name name name" "id aid ids url url dev" "username username username pw pw pw";
   -ms-grid-columns: (1fr)[6];
   grid-template-columns: repeat(6, 1fr);
   -ms-grid-rows: (3rem)[3];
@@ -748,9 +748,9 @@ html.no-focus .control-bar {
   align-items: center; }
   @media only screen and (min-width: 840px) {
     .client {
-      grid: "id name username pw url dev";
-      -ms-grid-columns: 3rem 1fr 1fr 1fr 3rem 3rem;
-      grid-template-columns: 3rem 1fr 1fr 1fr 3rem 3rem;
+      grid: "id aid ids name username pw url dev";
+      -ms-grid-columns: 3rem 3rem 3rem 1fr 1fr 1fr 3rem 3rem;
+      grid-template-columns: 3rem 3rem 3rem 1fr 1fr 1fr 3rem 3rem;
       -ms-grid-rows: 1fr;
       grid-template-rows: 1fr; } }
   .client:hover {
@@ -765,6 +765,28 @@ html.no-focus .control-bar {
     line-height: 3rem; }
   .client__number {
     grid-area: id;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .client__projectNumber {
+    grid-area: aid;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .client__combinedNumbers {
+    grid-area: ids;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
