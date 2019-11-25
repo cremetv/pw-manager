@@ -72,7 +72,7 @@ const fillList = clients => {
                 </div>
 
                 <div class="client__projectNumber">
-                  <div class="client__projectNumber_copy list-btn copy ${client.projectNr ? 'active' : 'disabled'}" data-clipboard-text="${client.projectNr}" title="${client.projectNr ? 'copy' + client.projectNr : ''}" data-tooltip="Auftragsnummer" data-tooltip-position="right" data-toast="${client.projectnr} copied">
+                  <div class="client__projectNumber_copy list-btn copy ${client.projectNr ? 'active' : 'disabled'}" data-clipboard-text="${client.projectNr}" title="${client.projectNr ? 'copy' + client.projectNr : ''}" data-tooltip="Auftragsnummer" data-tooltip-position="right" data-toast="${client.projectNr} copied">
                     <i class="material-icons">filter_none</i>
                   </div>
                 </div>
